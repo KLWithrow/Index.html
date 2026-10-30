@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluebird Wellness | Psychotherapy & Clinical Practice</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #2c4a6f;
+            --soft-blue: #e8f0f8;
+            --accent-sky: #7b9ebc;
+            --cream-bg: #faf9f6;
+            --dark-slate: #1a2530;
+            --text-muted: #5a6578;
+            --white: #ffffff;
+            --border-light: #e1e8f0;
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--cream-bg);
+            color: var(--dark-slate);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        h1 { font-size: 3rem; line-height: 1.2; }
+        h2 { font-size: 2.25rem; margin-bottom: 1rem; }
+        h3 { font-size: 1.5rem; }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(250, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 100;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-slate);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-sky);
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 0.85rem 1.75rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 1px solid var(--primary-blue);
+        }
+
+        .btn-primary:hover {
+            background-color: #1e3552;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-blue);
+            padding: 0.85rem 1.75rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border: 1px solid var(--primary-blue);
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--soft-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        /* Story Section */
+        .section-padding {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            background: var(--white);
+            padding: 3.5rem;
+            border-radius: 24px;
+            border: 1px solid var(--border-light);
+        }
+
+        /* Specialties Grid */
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-light);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Directories & Badges */
+        .directory-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .directory-badge {
+            padding: 0.6rem 1.25rem;
+            background: var(--soft-blue);
+            color: var(--primary-blue);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-slate);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero, .story-grid {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            Bluebird Wellness
+        </a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#specialties">Specialties</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#fees">Fees & Practice</a></li>
+            <li><a href="#contact" class="btn-primary">Free 15-Min Call</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Understand What's Deeper. Shift Current Patterns.</h1>
+            <p>Welcome to Bluebird Wellness. Over 30 years of evidence-based therapy helping individuals and families move out of fight, flight, or freeze and into genuine empowerment.</p>
+            <div style="display: flex; gap: 1rem;">
+                <a href="#contact" class="btn-primary">Schedule Initial Call</a>
+                <a href="#about" class="btn-outline">My Story & Practice</a>
+            </div>
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800" alt="Professional Headshot" class="hero-img">
+        </div>
+    </header>
+
+    <section id="about" class="section-padding">
+        <div class="story-grid">
+            <div>
+                <h2>The Origin of Bluebird Wellness</h2>
+                <p>My grandmother started a cherished family tradition of collecting "Bluebirds of Happiness." To me, bluebirds represent hope, resilience, and joy—the exact foundation I aim to build with everyone who enters my practice.</p>
+                <p style="margin-top: 1rem;">I am a mom to a 28-year-old, a dedicated clinician with 30 years of experience, and an avid outdoors enthusiast who loves skiing, Michigan sports, reading, hiking, and yoga.</p>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&q=80&w=800" alt="Wilson the French Bulldog" style="width: 100%; border-radius: 16px;">
+                <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem;">Meet Wilson, my faithful therapy companion!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="specialties" class="section-padding">
+        <h2 style="text-align: center;">Clinical Specialties & Frameworks</h2>
+        <div class="specialties-grid">
+            <div class="card">
+                <h3>Core Specialties</h3>
+                <p>• Trauma & Somatic Work</p>
+                <p>• Anxiety & Depression</p>
+                <p>• Women in Transition Phases</p>
+                <p>• Executive & Work Stress Coaching</p>
+            </div>
+            <div class="card">
+                <h3>Therapeutic Modalities</h3>
+                <p>• Cognitive Behavioral Therapy (CBT)</p>
+                <p>• Dialectical Behavior Therapy (DBT)</p>
+                <p>• Acceptance & Commitment (ACT)</p>
+                <p>• Psychodynamic & Relational</p>
+            </div>
+            <div class="card">
+                <h3>Our Core Approach</h3>
+                <p>Grounding in mindfulness, understanding physical body signals, and shifting from the drama triangle into empowerment with supportive, direct feedback.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="fees" class="section-padding" style="background: var(--soft-blue); border-radius: 24px;">
+        <h2 style="text-align: center;">Fees & Private Pay Care</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p style="margin-bottom: 2rem;">Choosing private pay allows for total privacy—no mandatory psychiatric diagnosis code submitted to insurance companies, complete control over our treatment frequency, and a pure focus on the therapeutic relationship.</p>
+            
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;">
+                <div style="background: white; padding: 1.5rem 2rem; border-radius: 12px;">
+                    <h4>$200</h4>
+                    <p>Individual Therapy</p>
+                </div>
+                <div style="background: white; padding: 1.5rem 2rem; border-radius: 12px;">
+                    <h4>$250</h4>
+                    <p>Couples & Family</p>
+                </div>
+            </div>
+            <p><strong>Sliding Scale Available:</strong> Reduced fee spots ($100) and 6-session packages available upon request.</p>
+        </div>
+    </section>
+
+    <section id="resources" class="section-padding">
+        <h2 style="text-align: center;">Recommended Resources</h2>
+        <div class="specialties-grid">
+            <div class="card">
+                <h3>Books & Publications</h3>
+                <p>Curated literature on trauma recovery, mindfulness, and personal empowerment.</p>
+            </div>
+            <div class="card">
+                <h3>DBT Cards & Skill Decks</h3>
+                <p>Practical tools to accumulate positives, ground emotions, and regulate distress.</p>
+            </div>
+            <div class="card">
+                <h3>Podcasts & Journals</h3>
+                <p>Guided reflections and audio resources for everyday stress and life transitions.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <p><strong>Verified Directory Profiles:</strong></p>
+            <div class="directory-container" style="justify-content: center;">
+                <span class="directory-badge">Psychology Today</span>
+                <span class="directory-badge">TherapyDen</span>
+                <span class="directory-badge">GoodTherapy</span>
+                <span class="directory-badge">Zencare</span>
+                <span class="directory-badge">Monarch</span>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Ready to See If We Are the Right Fit?</h2>
+        <p style="margin-bottom: 2rem;">Schedule a free 15-minute consultation call. Evening and weekend appointments available upon request.</p>
+        <a href="mailto:contact@bluebirdwellness.com" class="btn-primary" style="background: white; color: var(--primary-blue);">Get In Touch</a>
+        <p style="font-size: 0.85rem; color: #a0aec0; margin-top: 3rem;">© 2026 Bluebird Wellness Psychotherapy. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
